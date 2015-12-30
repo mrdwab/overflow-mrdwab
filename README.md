@@ -15,6 +15,5 @@ Installation
 The easiest way to install this package is to use `install_github` from the `devtools` package:
 
 ```R
-library(devtools)
-install_github("sebastian-c/overflow")
+devtools::install_github("mrdwab/overflow-mrdwab", ref = "clipfix")
 ```

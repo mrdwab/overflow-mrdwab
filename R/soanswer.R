@@ -16,13 +16,12 @@
 #' soanswer(stop("An error!"))
 #' @importFrom utils capture.output
 #' @export soanswer
-soanswer <- function(expr)
-{
-  input_lines <- deparse(substitute(expr))
+soanswer <- function(expr) {
+  input_lines <- noquote(paste0("    ", deparse(substitute(expr))))
   output <- expr
   output_lines <- noquote(paste0("    ## ", output))
   lines <- c(input_lines, output_lines)
   cat(lines, sep = "\n")
-  writeClip(lines)
+  writeClip(lines) 
   invisible(lines)
 }
